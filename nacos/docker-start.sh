@@ -1,0 +1,21 @@
+docker run -d --name nacos \
+ -p 8848:8848 \
+ -p 9848:9848 \
+ -p 9849:9849 \
+ --privileged=true \
+ -e JVM_XMS=256m \
+ -e JVM_XMX=512m \
+ -e MODE=standalone \
+ -e SPRING_DATASOURCE_PLATFORM=mysql \
+ -e MYSQL_SERVICE_HOST=mysql的IP地址 \
+ -e MYSQL_SERVICE_PORT=3306 \
+ -e MYSQL_SERVICE_DB_NAME=nacos \
+ -e MYSQL_SERVICE_USER=root \
+ -e MYSQL_SERVICE_PASSWORD=mysql密码 \
+ -e NACOS_AUTH_IDENTITY_KEY=security \
+ -e NACOS_AUTH_IDENTITY_VALUE=serverIdentity \
+ -e NACOS_AUTH_TOKEN=SecretKey012345678901234567890123456789012345678901234567890123456789 \
+ -v /root/nacos/logs/:/home/nacos/logs/ \
+ -v /root/nacos/conf/:/home/nacos/conf/ \
+ -v /root/nacos/data/:/home/nacos/data/ --restart=alwaysnacos/nacos-server
+
