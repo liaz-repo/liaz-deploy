@@ -40,7 +40,7 @@ docker run -d --name nacos \
  -e NACOS_AUTH_TOKEN=SecretKey012345678901234567890123456789012345678901234567890123456789 \
  -v /root/nacos/logs/:/home/nacos/logs/ \
  -v /root/nacos/conf/:/home/nacos/conf/ \
- -v /root/nacos/data/:/home/nacos/data/ --restart=alwaysnacos/nacos-server
+ -v /root/nacos/data/:/home/nacos/data/ --restart=always nacos/nacos-server
 ```
 # 修改minio下docker-start.sh
 ```
